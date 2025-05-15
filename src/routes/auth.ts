@@ -230,7 +230,36 @@ async function getStudentTutors(
 }
 
 router.post("/signup", async (req, res) => {
-  return res.json({ mssg: "Signup" });
+  const { role, username, password, name, age, gmail } = req.body;
+  if (role.isStudent) {
+    console.log("student signup");
+    const previousStudent = await Student.findById(username);
+    if (previousStudent)
+      return res.status(401).json(errors.userNameAlreadyExists);
+    const student = new Student({
+      name: name,
+      _id: username,
+      password: password,
+      gmail: gmail,
+    });
+    await student.save();
+  } else if (role.isTutor) {
+    const previousTeacher = await Tutor.findById(username);
+    if (previousTeacher)
+      return res.status(401).json(errors.userNameAlreadyExists);
+    const teacher = new Tutor({
+      name: name,
+      _id: username,
+      password: password,
+      gmail: gmail,
+      workExperiences: req.body.workExp,
+      skills: req.body.skills,
+      educations: req.body.education,
+    });
+    // save
+    await teacher.save();
+  }
+  return res.json({ mssg: "Signup Successful" });
 });
 
 router.post("/signin", async (req, res) => {

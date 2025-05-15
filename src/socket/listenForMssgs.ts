@@ -5,6 +5,7 @@ import { saveMessage } from "../handlers/saveMessage";
 import { teachers } from "../server";
 import { students } from "../server";
 import { getAnswer } from "../config/geminiApi";
+import Tutor from "../models/teacher";
 
 export function listenForMessage(socket: Socket, io: SocketIoServer) {
   const user = socket.data.user as User;
@@ -21,7 +22,23 @@ export function listenForMessage(socket: Socket, io: SocketIoServer) {
         });
       } else {
         // teacher is offline, send ai response to student
-        const aiResponse = await getAnswer(data.mssg, user.username);
+        const tutor = await Tutor.findById(data.to, {
+          name: 1,
+          phone: 1,
+          email: 1,
+          skills: 1,
+          educations: 1,
+          workExperiences: 1,
+          about: 1,
+          address: 1,
+        });
+        console.log(tutor);
+        const aiResponse = await getAnswer(
+          data.mssg,
+          user.username,
+          tutor,
+          data.extra
+        );
         io.to(students[user.username]).emit("new-mssg", {
           from: data.to,
           mssg: aiResponse,

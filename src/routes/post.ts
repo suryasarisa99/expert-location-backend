@@ -7,10 +7,10 @@ const router = Router();
 router.post("/upload", authenticate, async (req: AuthRequest, res) => {
   const { username, name } = req;
 
-  const { caption, url, ext, type, size, filename } = req.body;
+  const { caption, url, ext, type, size, filename, sentiment } = req.body;
   console.log(req.body);
-  if (!caption || !url || !ext || !filename) {
-    return res.status(400).json({ error: "All fields are required" });
+  if (!caption && !url) {
+    return res.status(400).json({ error: "Either caption or Url is required" });
   }
   const post = new Post({
     caption,
@@ -21,6 +21,7 @@ router.post("/upload", authenticate, async (req: AuthRequest, res) => {
     filename,
     username,
     name,
+    sentiment,
   });
   await post.save();
 

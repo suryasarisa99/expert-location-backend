@@ -20,8 +20,16 @@ export const handleTutorRequest = async ({
   if (!teacherUsername || role == undefined || role == null)
     return { mssg: "Unauthorized" };
   if (role.isStudent) return { mssg: "Unauthorized" };
+  console.log("handleTutorRequest: ", {
+    id,
+    teacherUsername,
+    teacherName,
+    status,
+    studentName,
+    role,
+  });
 
-  await Tutor.updateOne(
+  let result = await Tutor.updateOne(
     { _id: teacherUsername, "requests._id": id },
     {
       $set: {
@@ -29,6 +37,7 @@ export const handleTutorRequest = async ({
       },
     }
   );
+  console.log("result: ", result);
 
   return { mssg: "Request sent" };
 };

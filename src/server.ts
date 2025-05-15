@@ -20,7 +20,6 @@ import {
 
 const origins: string[] = [
   "http://localhost:4444",
-  "http://192.168.1.8:4444",
   "https://e81d-2401-4900-1c0f-df2b-438c-b2b8-f3d6-a0de.ngrok-free.app",
   process.env.FRONTEND,
 ];

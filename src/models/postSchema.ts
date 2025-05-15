@@ -9,6 +9,7 @@ const PostSchema = new Schema({
   type: String,
   username: String,
   name: String,
+  sentiment: String,
   date: {
     type: Date,
     default: Date.now,
