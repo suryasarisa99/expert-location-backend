@@ -1,9 +1,12 @@
 {
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifierEnding": "auto",
   "compilerOptions": {
     "module": "commonjs",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "target": "es6",
+    "resolveJsonModule": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,

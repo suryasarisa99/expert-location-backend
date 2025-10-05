@@ -1,24 +1,25 @@
 {
   "EducationInstitutions": [
-    "University of Toronto",
-    "University of Waterloo",
-    "McMaster University",
-    "York University",
-    "Ryerson University",
-    "University of Ottawa",
-    "University of Western Ontario",
-    "Queen's University",
-    "University of Guelph",
-    "Carleton University",
-    "University of Windsor",
-    "Wilfrid Laurier University",
-    "Trent University",
-    "University of Ontario Institute of Technology",
-    "Lakehead University",
-    "Nipissing University",
-    "Brock University",
-    "University of Waterloo",
-    "University of Toronto"
+    "Indian Institute of Technology (IIT) Bombay",
+    "Indian Institute of Science (IISc), Bangalore",
+    "Jawaharlal Nehru University (JNU), Delhi",
+    "University of Delhi",
+    "Banaras Hindu University (BHU), Varanasi",
+    "Indian Institute of Technology (IIT) Madras",
+    "Anna University, Chennai",
+    "University of Hyderabad",
+    "Amrita Vishwa Vidyapeetham",
+    "Jadavpur University, Kolkata",
+    "Harvard University, USA",
+    "University of Oxford, UK",
+    "Stanford University, USA",
+    "University of Cambridge, UK",
+    "Massachusetts Institute of Technology (MIT), USA",
+    "University of Toronto, Canada",
+    "ETH Zurich, Switzerland",
+    "University of Tokyo, Japan",
+    "University of Melbourne, Australia",
+    "National University of Singapore (NUS), Singapore"
   ],
   "educationDegrees": [
     "Bachelor of Arts",
@@ -269,7 +270,7 @@
     "Cardno",
     "Louis Berger"
   ],
-  "postionNamesInComapanies": [
+  "positionNamesInCompanies": [
     "Software Engineer",
     "Software Developer",
     "Web Developer",
@@ -303,5 +304,25 @@
     "Security Officer",
     "Security Guard",
     "Security Consultant"
+  ],
+  "universityPositions": [
+    "Teaching Assistant",
+    "Lecturer",
+    "Assistant Lecturer",
+    "Assistant Professor",
+    "Associate Professor",
+    "Professor",
+    "Senior Professor",
+    "Distinguished Professor",
+    "Chair Professor",
+    "Emeritus Professor",
+    "Head of Department",
+    "Dean",
+    "Director",
+    "Vice Chancellor",
+    "Provost",
+    "Rector",
+    "Chancellor",
+    "President"
   ]
 }

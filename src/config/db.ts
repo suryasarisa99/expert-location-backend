@@ -7,7 +7,7 @@ const DB_Local = `mongodb://localhost:27017/${collection}`;
 const DB_LocalIp = `mongodb://192.168.1.13:27017/${collection}`;
 
 const dbConnection = async () => {
-  return connect(DB_Local, {})
+  return connect(DB_Online, {})
     .then(() => {
       console.log("Database connected");
     })
